@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApplicationPeerGrade7</name>
+    </assembly>
+    <members>
+        <member name="T:WebApplicationPeerGrade7.Controllers.MainController">
+            <summary>
+            Основной класс контроллера, тут вся магия.
+            </summary>
+        </member>
+        <member name="M:WebApplicationPeerGrade7.Controllers.MainController.GenerateRandomString(System.Int32)">
+            <summary>
+            Метод генерирует случайную строку.
+            </summary>
+            <param name="length">Длина строки.</param>
+            <returns>Сгенерированная строка.</returns>
+        </member>
+        <member name="M:WebApplicationPeerGrade7.Controllers.MainController.GenerateRandomName(System.Int32)">
+            <summary>
+            Метод генерирует случайное имя пользователя.
+            </summary>
+            <param name="length">Длина имени.</param>
+            <returns>Сгенерированное имя.</returns>
+        </member>
+        <member name="M:WebApplicationPeerGrade7.Controllers.MainController.GenerateRandomEmail(System.Int32)">
+            <summary>
+            Метод генерирует случайный почтовый адрес.
+            </summary>
+            <param name="length">Длина именной части почтового адреса.</param>
+            <returns>Сгенерированный почтовый адрес.</returns>
+        </member>
+        <member name="M:WebApplicationPeerGrade7.Controllers.MainController.SaveData(System.String,System.String)">
+            <summary>
+            Метод записывает список пользователей и сообщений в соответствующие файлы.
+            </summary>
+            <param name="path1">Путь к файлу с пользователями.</param>
+            <param name="path2">Путь к файлу с сообщениями.</param>
+        </member>
+        <member name="M:WebApplicationPeerGrade7.Controllers.MainController.LoadData(System.String,System.String)">
+            <summary>
+            Метод загружает данные из файла.
+            </summary>
+            <param name="path1">Путь к файлу с пользователями.</param>
+            <param name="path2">Путь к файлу с сообщениями.</param>
+        </member>
+        <member name="M:WebApplicationPeerGrade7.Controllers.MainController.GenerateData">
+            <summary>
+            Метод генерирует пользователей и сообщения.
+            </summary>
+            <returns>Кортеж из списка сгенерированных пользователей и списка сгенерированных сообщений.</returns>
+        </member>
+        <member name="M:WebApplicationPeerGrade7.Controllers.MainController.GetUser(System.String)">
+            <summary>
+            Метод ищет пользователя по идентификатору.
+            </summary>
+            <param name="id">Идентификатор пользователя.</param>
+            <returns>Результат поиска.</returns>
+        </member>
+        <member name="M:WebApplicationPeerGrade7.Controllers.MainController.GetUsers">
+            <summary>
+            Метод возвращает всех пользователей.
+            </summary>
+            <returns>Результат поиска.</returns>
+        </member>
+        <member name="M:WebApplicationPeerGrade7.Controllers.MainController.GetMessagesFromFixedToFixed(System.String,System.String)">
+            <summary>
+            Метод ищет сообщения написанные одним указанным пользователем другому указанному пользователю.
+            </summary>
+            <param name="idFrom">Идентификатор отправителя сообщения.</param>
+            <param name="idTo">Идентификатор получателя сообщения.</param>
+            <returns>Результат поиска, список сообщений.</returns>
+        </member>
+        <member name="M:WebApplicationPeerGrade7.Controllers.MainController.GetMessagesBySender(System.String)">
+            <summary>
+            Метод ищет все сообщения, написанные указанным пользователем.
+            </summary>
+            <param name="idSender">Идентификатор отправителя.</param>
+            <returns>Результат поиска, список сообщений.</returns>
+        </member>
+        <member name="M:WebApplicationPeerGrade7.Controllers.MainController.GetMessagesByReceiver(System.String)">
+            <summary>
+            Метод ищет все сообщения, полученные указанным пользователем.
+            </summary>
+            <param name="idReceiver">Идентификатор получателя.</param>
+            <returns>Результат поиска, список сообщений.</returns>
+        </member>
+        <member name="T:WebApplicationPeerGrade7.Models.Message">
+            <summary>
+            Класс сообщения.
+            </summary>
+        </member>
+        <member name="P:WebApplicationPeerGrade7.Models.Message.Subject">
+            <summary>
+            Тема сообщения.
+            </summary>
+        </member>
+        <member name="P:WebApplicationPeerGrade7.Models.Message.Mesage">
+            <summary>
+            Текст сообщения.
+            </summary>
+        </member>
+        <member name="P:WebApplicationPeerGrade7.Models.Message.SenderID">
+            <summary>
+            Идентификатор отправителя.
+            </summary>
+        </member>
+        <member name="P:WebApplicationPeerGrade7.Models.Message.ReceiverID">
+            <summary>
+            Идентификатор получателя.
+            </summary>
+        </member>
+        <member name="M:WebApplicationPeerGrade7.Models.Message.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Конструктор сообщения.
+            </summary>
+            <param name="subject">Тема сообщение.</param>
+            <param name="message">Текст сообщения.</param>
+            <param name="senderid">Идентификатор отправителя.</param>
+            <param name="receiverid">Идентификатор получателя.</param>
+        </member>
+        <member name="M:WebApplicationPeerGrade7.Models.Message.ToString">
+            <summary>
+            Перегруженное приведение к строке.
+            </summary>
+            <returns>Строковое значение сообщения.</returns>
+        </member>
+        <member name="T:WebApplicationPeerGrade7.Models.User">
+            <summary>
+            Класс пользователя.
+            </summary>
+        </member>
+        <member name="P:WebApplicationPeerGrade7.Models.User.UserName">
+            <summary>
+            Имя пользователя.
+            </summary>
+        </member>
+        <member name="P:WebApplicationPeerGrade7.Models.User.UserEmail">
+            <summary>
+            Почтовый ящик пользователя.
+            </summary>
+        </member>
+        <member name="M:WebApplicationPeerGrade7.Models.User.#ctor(System.String,System.String)">
+            <summary>
+            Конструктор пользователя.
+            </summary>
+            <param name="name">Имя пользователя.</param>
+            <param name="email">Почтовый ящик пользователя.</param>
+        </member>
+        <member name="M:WebApplicationPeerGrade7.Models.User.ToString">
+            <summary>
+            Перегруженное приведение к строке.
+            </summary>
+            <returns>Строковое значение пользователя.</returns>
+        </member>
+        <member name="M:WebApplicationPeerGrade7.Models.User.System#IComparable#CompareTo(System.Object)">
+            <summary>
+            Компоратор пользователей (сравнение по почтовому ящику).
+            </summary>
+            <param name="obj">Объект, который должен быть пользователем.</param>
+            <returns>Чиселку, как и любой компоратор.</returns>
+        </member>
+        <member name="T:WebApplicationPeerGrade7.Startup">
+            <summary>
+            Класс стартапа.
+            </summary>
+        </member>
+        <member name="M:WebApplicationPeerGrade7.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Конструктор стартапа.
+            </summary>
+            <param name="configuration">Конфигурация.</param>
+        </member>
+        <member name="P:WebApplicationPeerGrade7.Startup.Configuration">
+            <summary>
+            Важное свойство.
+            </summary>
+        </member>
+        <member name="M:WebApplicationPeerGrade7.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services">Сервисы.</param>
+        </member>
+        <member name="M:WebApplicationPeerGrade7.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app">ApplicationBuilder.</param>
+            <param name="env">IWebHostEnvironment.</param>
+        </member>
+    </members>
+</doc>
